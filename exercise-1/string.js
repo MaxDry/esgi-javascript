@@ -74,7 +74,7 @@ function prop_access(prairie, way) {
             prairie = "Your object doesn't have the property : " + element;
         }
     })
-    return JSON.stringify(prairie);
+    return prairie;
 }
 
 function yoda(message) {
