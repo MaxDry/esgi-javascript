@@ -56,7 +56,7 @@ function leet(message) {
 
 function prop_access(prairie, way) {
     if(typeof prairie !== "object" || prairie === null) {
-        return "test not exist";
+        return way + " not exist";
     }else if(typeof way !== "string" || way.length === 0){
         return prairie;
     }
