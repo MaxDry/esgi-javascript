@@ -1,6 +1,6 @@
 const message = "toggleCase_is_the_coolest";
 
-var prairie = null;
+var prairie = {'animal':{'type':{'name':'chien'}}};
 
 var way = "animal.type";
 
