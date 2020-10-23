@@ -36,21 +36,21 @@ function capitalize(message) {
     if(!verifyMessage(message)) {
         return "";
     }
-    return message.split(' ').map(word => ucfirst(word)).join(' ');
+    return message.toLowerCase().split(' ').map(word => ucfirst(word)).join(' ');
 }
 
 function camelCase(message) {
     if(!verifyMessage(message)) {
         return "";
     }
-    return capitalize(message).replace(/\W/g, "");
+    return capitalize(message.replace(/_/g, ' ')).replace(/\W/g, "");
 }
 
 function snake_case(message) {
     if(!verifyMessage(message)) {
         return "";
     }
-    return message.replace(" ", "_");
+    return message.replace(/ /g, '_');
 }
 
 function leet(message) {
@@ -95,20 +95,20 @@ function verlan(message) {
 }
 
 //Call all functions
-    // console.log(`\nMessage de base : ${message} \n`)
+    console.log(`\nMessage de base : ${message} \n`)
 
-    // console.log(`Méthode ucFirst : ${ucfirst(message)}`);
+    console.log(`Méthode ucFirst : ${ucfirst(message)}`);
 
-    // console.log(`Méthode capitalize : ${capitalize(message)}`);
+    console.log(`Méthode capitalize : ${capitalize(message)}`);
 
-    // console.log(`Méthode camelCase : ${camelCase(message)}`);
+    console.log(`Méthode camelCase : ${camelCase(message)}`);
 
-    // console.log(`Méthode snake_case : ${snake_case(message)}`);
+    console.log(`Méthode snake_case : ${snake_case(message)}`);
 
-    // console.log(`Méthode leet : ${leet(message)}`);
+    console.log(`Méthode leet : ${leet(message)}`);
 
-    // console.log(`Méthode prop_access : ${prop_access(prairie, way)}`);
+    console.log(`Méthode prop_access : ${prop_access(prairie, way)}`);
 
-    // console.log(`Méthode yoda : ${yoda(message)}`);
+    console.log(`Méthode yoda : ${yoda(message)}`);
 
-    // console.log(`Méthode verlan : ${verlan(message)}`);
+    console.log(`Méthode verlan : ${verlan(message)}`);
