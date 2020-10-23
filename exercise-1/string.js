@@ -27,42 +27,42 @@ const verifyMessage = (message) => {
 //All functions about message
 function ucfirst(message) {
     if(!verifyMessage(message)) {
-        return "noop";
+        return "";
     }
     return (message+'').charAt(0).toUpperCase()+message.substr(1);
 }
 
 function capitalize(message) {
     if(!verifyMessage(message)) {
-        return "noop";
+        return "";
     }
     return message.split(' ').map(word => ucfirst(word)).join(' ');
 }
 
 function camelCase(message) {
     if(!verifyMessage(message)) {
-        return "noop";
+        return "";
     }
     return capitalize(message).replace(/\W/g, "");
 }
 
 function snake_case(message) {
     if(!verifyMessage(message)) {
-        return "noop";
+        return "";
     }
     return message.replace(" ", "_");
 }
 
 function leet(message) {
     if(!verifyMessage(message)) {
-        return "noop";
+        return "";
     }
     return message.allReplace({'a': '4', 'e': '3', 'i': '1', 'o': '0', 'u': '(_)', 'y': '7'})
 }
 
 function prop_access(prairie, way) {
     if(!verifyMessage(message)) {
-        return "noop";
+        return "";
     }
     if(typeof prairie !== "object" || prairie == null) {
         return "Your object is not correct";
@@ -82,33 +82,33 @@ function prop_access(prairie, way) {
 
 function yoda(message) {
     if(!verifyMessage(message)) {
-        return "noop";
+        return "";
     }
     return message.split(' ').reverse().join(' ');
 }
 
 function verlan(message) {
     if(!verifyMessage(message)) {
-        return "noop";
+        return "";
     }
     return yoda(message.split('').reverse().join(''));
 }
 
 //Call all functions
-    console.log(`\nMessage de base : ${message} \n`)
+    // console.log(`\nMessage de base : ${message} \n`)
 
-    console.log(`Méthode ucFirst : ${ucfirst(message)}`);
+    // console.log(`Méthode ucFirst : ${ucfirst(message)}`);
 
-    console.log(`Méthode capitalize : ${capitalize(message)}`);
+    // console.log(`Méthode capitalize : ${capitalize(message)}`);
 
-    console.log(`Méthode camelCase : ${camelCase(message)}`);
+    // console.log(`Méthode camelCase : ${camelCase(message)}`);
 
-    console.log(`Méthode snake_case : ${snake_case(message)}`);
+    // console.log(`Méthode snake_case : ${snake_case(message)}`);
 
-    console.log(`Méthode leet : ${leet(message)}`);
+    // console.log(`Méthode leet : ${leet(message)}`);
 
-    console.log(`Méthode prop_access : ${prop_access(prairie, way)}`);
+    // console.log(`Méthode prop_access : ${prop_access(prairie, way)}`);
 
-    console.log(`Méthode yoda : ${yoda(message)}`);
+    // console.log(`Méthode yoda : ${yoda(message)}`);
 
-    console.log(`Méthode verlan : ${verlan(message)}`);
+    // console.log(`Méthode verlan : ${verlan(message)}`);
