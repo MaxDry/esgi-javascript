@@ -1,4 +1,4 @@
-const message = "hello world";
+const message = "toggle case is the coolest";
 
 var prairie = {
     animal: {
@@ -25,27 +25,45 @@ const verifyMessage = (message) => {
 }
 
 //All functions about message
-function ucFirst(message) {
+function ucfirst(message) {
+    if(!verifyMessage(message)) {
+        return "noop";
+    }
     return (message+'').charAt(0).toUpperCase()+message.substr(1);
 }
 
 function capitalize(message) {
-    return message.split(' ').map(word => ucFirst(word)).join(' ');
+    if(!verifyMessage(message)) {
+        return "noop";
+    }
+    return message.split(' ').map(word => ucfirst(word)).join(' ');
 }
 
 function camelCase(message) {
-    return capitalize(message).replace(" ", "");
+    if(!verifyMessage(message)) {
+        return "noop";
+    }
+    return capitalize(message).replace(/\W/g, "");
 }
 
 function snake_case(message) {
+    if(!verifyMessage(message)) {
+        return "noop";
+    }
     return message.replace(" ", "_");
 }
 
 function leet(message) {
-    return message.allReplace({'a': '4', 'e': '3', 'I': '1', 'o': '0', 'u': '(_)', 'y': '7'})
+    if(!verifyMessage(message)) {
+        return "noop";
+    }
+    return message.allReplace({'a': '4', 'e': '3', 'i': '1', 'o': '0', 'u': '(_)', 'y': '7'})
 }
 
 function prop_access(prairie, way) {
+    if(!verifyMessage(message)) {
+        return "noop";
+    }
     if(typeof prairie !== "object" || prairie == null) {
         return "Your object is not correct";
     }else if(typeof way !== "string" || way.length === 0){
@@ -63,22 +81,27 @@ function prop_access(prairie, way) {
 }
 
 function yoda(message) {
+    if(!verifyMessage(message)) {
+        return "noop";
+    }
     return message.split(' ').reverse().join(' ');
 }
 
 function verlan(message) {
+    if(!verifyMessage(message)) {
+        return "noop";
+    }
     return yoda(message.split('').reverse().join(''));
 }
 
 //Call all functions
-if(verifyMessage(message)){
     console.log(`\nMessage de base : ${message} \n`)
 
-    console.log(`Méthode ucFirst : ${ucFirst(message)}`);
+    console.log(`Méthode ucFirst : ${ucfirst(message)}`);
 
     console.log(`Méthode capitalize : ${capitalize(message)}`);
 
-    console.log(`Méthode cameCase : ${camelCase(message)}`);
+    console.log(`Méthode camelCase : ${camelCase(message)}`);
 
     console.log(`Méthode snake_case : ${snake_case(message)}`);
 
@@ -89,6 +112,3 @@ if(verifyMessage(message)){
     console.log(`Méthode yoda : ${yoda(message)}`);
 
     console.log(`Méthode verlan : ${verlan(message)}`);
-} else {
-    return '';
-}
