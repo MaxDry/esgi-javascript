@@ -58,8 +58,6 @@ function prop_access(prairie, way) {
     if(typeof prairie !== "object" || prairie === null) {
         return "test not exist";
     }else if(typeof way !== "string" || way.length === 0){
-        return way;
-    }else if (way === null){
         return prairie;
     }
 
@@ -67,7 +65,7 @@ function prop_access(prairie, way) {
         if(prairie.hasOwnProperty(element)){
             prairie = prairie[element];
         }else {
-            prairie = "Your object doesn't have the property : " + element;
+            prairie = element + " not exist";
         }
     })
     return prairie;
