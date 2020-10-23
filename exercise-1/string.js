@@ -61,13 +61,10 @@ function leet(message) {
 }
 
 function prop_access(prairie, way) {
-    if(!verifyMessage(message)) {
-        return "";
-    }
     if(typeof prairie !== "object" || prairie == null) {
-        return "Your object is not correct";
+        return "test not exist";
     }else if(typeof way !== "string" || way.length === 0){
-        return "Your path is not correct";
+        return prairie;
     }
 
     way.split('.').map(element => {
