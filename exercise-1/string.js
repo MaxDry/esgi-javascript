@@ -56,11 +56,11 @@ function leet(message) {
 
 function prop_access(prairie, way) {
     if(typeof prairie !== "object" || prairie === null) {
-        console.log("test not exist");
-        return;
-    }else if(typeof way !== "string" || way.length === 0 || way === null){
-        console.log(way + " not exist");
-        return;
+        return "test not exist";
+    }else if(typeof way !== "string" || way.length === 0){
+        return way;
+    }else if (way === null){
+        return prairie;
     }
 
     way.split('.').map(element => {
