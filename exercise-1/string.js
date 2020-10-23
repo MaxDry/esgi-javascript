@@ -65,11 +65,11 @@ function prop_access(prairie, way) {
         if(prairie.hasOwnProperty(element)){
             prairie = prairie[element];
         }else {
-            prairie = way + " not exist";
+            console.log(way + " not exist");
         }
     })
     return prairie;
-}
+};
 
 function yoda(message) {
     if(!verifyMessage(message)) {
