@@ -65,7 +65,7 @@ function prop_access(prairie, way) {
         if(prairie.hasOwnProperty(element)){
             prairie = prairie[element];
         }else {
-            prairie = element + " not exist";
+            prairie = way + " not exist";
         }
     })
     return prairie;
