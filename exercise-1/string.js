@@ -1,12 +1,6 @@
 const message = "toggleCase_is_the_coolest";
 
-var prairie = {
-    animal: {
-        type: {
-            name: "chien"
-        }
-    }
-}
+var prairie = null;
 
 var way = "animal.type";
 
@@ -61,13 +55,16 @@ function leet(message) {
 }
 
 function prop_access(prairie, way) {
-    if(typeof prairie !== "object" || prairie == null) {
+    if(typeof prairie !== "object" || prairie === null) {
         return "test not exist";
     }else if(typeof way !== "string" || way.length === 0){
         return prairie;
+    }else if (way === null){
+        return way + " not exist";
     }
 
     way.split('.').map(element => {
+        console.log("TESSST");
         if(prairie.hasOwnProperty(element)){
             prairie = prairie[element];
         }else {
