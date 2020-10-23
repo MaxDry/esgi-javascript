@@ -1,4 +1,4 @@
-const message = "toggle case is the coolest";
+const message = "toggleCase_is_the_coolest";
 
 var prairie = {
     animal: {
@@ -50,7 +50,7 @@ function snake_case(message) {
     if(!verifyMessage(message)) {
         return "";
     }
-    return message.replace(/ /g, '_');
+    return message.replace(/ /g, '_').toLowerCase();
 }
 
 function leet(message) {
